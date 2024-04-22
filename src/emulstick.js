@@ -565,6 +565,14 @@ export const sendByString = async (keyboardService, str) => {
       }
       case '|': {
         const keytoSend = KeyMap.BACK_SLASH
+        await sendKeyDown(keytoSend, opNum((opkeys) => { 
+          opkeys[6] = 1 // shift
+        }))
+        await sendKeyUp()
+        break
+      }
+      case '\\': {
+        const keytoSend = KeyMap.BACK_SLASH
         await sendKeyDown(keytoSend, opNum((opkeys) => { }))
         await sendKeyUp()
         break
