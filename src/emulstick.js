@@ -7,11 +7,12 @@ export const MOUSE_CHARACTERISTIC_ID =
 
 export const openBlueTooth = async () => {
   const options = {
-    filters: [
-      {
-        namePrefix: 'EmulStick',
-      },
-    ],
+    // filters: [
+    //   // {
+    //   //   namePrefix: 'EmulStick',
+    //   // },
+    // ],
+    acceptAllDevices: true,
     optionalServices: [CUSTOM_SERVICE_ID.toLowerCase()],
   };
   const device = await navigator.bluetooth.requestDevice(options);
